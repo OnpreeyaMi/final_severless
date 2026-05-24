@@ -87,8 +87,8 @@ Stage 7: Deploy to Kubernetes Cluster (Production) Jenkins จะส่งคำ
 
 > **ตอบ:** _[ความแตกต่างระหว่าง Container กับ Virtual Machine (VM):
 Virtual Machine (VM): เป็นการจำลองในระดับฮาร์ดแวร์ (Hardware Virtualization) ผ่าน Hypervisor โดยแต่ละ VM จะต้องมี Guest OS (ระบบปฏิบัติการเต็มรูปแบบ) เป็นของตัวเอง ทำให้กินทรัพยากร (CPU, RAM, Disk) สูงมาก บูตระบบช้า (เป็นนาที) และมีขนาดใหญ่ (หลาย GB)
-Container: เป็นการจำลองในระดับระบบปฏิบัติการ (OS Virtualization) โดยแชร์ Host OS Kernel ร่วมกัน และใช้ฟีเจอร์ของ Linux (เช่น Namespaces, Cgroups) ในการแยกสภาวะแวดล้อม (Isolation) ทำให้ไม่ต้องมี Guest OS ส่งผลให้กินทรัพยากรต่ำมาก บูตเร็วในระดับวินาที และมีขนาดเล็กมาก (ระดับ MB) //
-การแก้ปัญหา "บนเครื่องผมรันได้แต่บน server รันไม่ได้" ด้วย Portability:
+Container: เป็นการจำลองในระดับระบบปฏิบัติการ (OS Virtualization) โดยแชร์ Host OS Kernel ร่วมกัน และใช้ฟีเจอร์ของ Linux (เช่น Namespaces, Cgroups) ในการแยกสภาวะแวดล้อม (Isolation) ทำให้ไม่ต้องมี Guest OS ส่งผลให้กินทรัพยากรต่ำมาก บูตเร็วในระดับวินาที และมีขนาดเล็กมาก (ระดับ MB)   
+  การแก้ปัญหา "บนเครื่องผมรันได้แต่บน server รันไม่ได้" ด้วย Portability:
 ปัญหานี้มักเกิดจากสภาพแวดล้อม (Environment Mis-match) เช่น เวอร์ชันของ Python หรือ Library ในเครื่อง Dev ไม่ตรงกับบน Server
 การทำ Containerize จะทำการมัดรวม (Package) ตัวแอปพลิเคชัน Flask, ซอร์สโค้ด, Runtime (Python 3.11), Dependencies ทั้งหมด (requirements.txt) และ Environment Variables ที่จำเป็น เข้าไว้ด้วยกันใน Docker Image เพียงหนึ่งเดียว ทำให้มั่นใจได้ว่า สภาพแวดล้อมที่แอปพลิเคชันใช้จะถูกล็อกไว้คงที่ ไม่ว่าจะนำ Image นี้ไปรันบนคอมพิวเตอร์ของ Dev คนไหน หรือบน On-premise Server เครื่องใดก็ตาม ระบบจะทำงานได้ผลลัพธ์เหมือนกัน 100%]_
 
