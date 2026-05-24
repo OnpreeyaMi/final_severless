@@ -43,7 +43,10 @@
 
 ทีม dev 4 คนเดิม push เข้า `main` พร้อมกันทำให้ conflict บ่อย ออกแบบ **Git branching strategy** ให้ทีมนี้ อธิบาย: branch ที่มี, วัตถุประสงค์ของแต่ละ branch, และ flow เมื่อจะ deploy ขึ้น production
 
-> **ตอบ:** _[1.main เป็นbranchหลักที่เสถียร โค้ดพร้อมขึ้นdeploy ล็อกไว้ไม่ให้ใครpushตรงๆ. 2.feature/* branch ชั่วคราวที่แต่ละคนจะแยก. 
+> **ตอบ:** _[1.main เป็นbranchหลักที่เสถียร โค้ดพร้อมขึ้นdeploy ล็อกไว้ไม่ให้ใครpushตรงๆ
+
+2.feature/* branch ชั่วคราวที่แต่ละคนจะแยก
+
 [ feature/* branch ] ──(สร้าง PR & ตรวจสอบ)──> [ main branch ] ──(Jenkins Build & Deploy)──> [ K8s Production ]ออกไปจาก main เพื่อแตกงานฟีเจอร์ใหม่หรือแก้บั๊กของตัวเอง]_
 
 ### ข้อ 1.2 (10 คะแนน)
