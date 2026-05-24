@@ -1,0 +1,5 @@
+services:
+  nginx:
+    image: mi-nginx:v1
+    ports:
+      - "81:80"
